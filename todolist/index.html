@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do List</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Task</button>
+        </form>
+        
+        <ul>
+            {% for task in tasks %}
+                <li class="{% if task.is_done %}completed{% endif %}">
+                    <span>{{ task.title }}</span>
+                    <a href="{% url 'complete_task' task.id %}" class="complete-btn"><i class="fas fa-check"></i></a>
+                    <a href="{% url 'delete_task' task.id %}" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
