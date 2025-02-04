@@ -14,7 +14,7 @@ function addTask() {
     let li = document.createElement("li");
     li.textContent = taskValue;
 
-    // Click to mak as completed 
+    // Click to mark as completed 
     li.addEventListener("click", function() {
         li.classList.toggle("completed");
     });
