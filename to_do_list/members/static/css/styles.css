@@ -1,7 +1,7 @@
 /* General Reset */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background-color: #ffd6e0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135 deg,#E55D87, #5fc3e4 );
     text-align: center;
     margin: 0;
     padding: 0;
