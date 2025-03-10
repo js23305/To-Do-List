@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Shopping Tasks</h1>
-    <div class="task-container">
-        <input type="text" id="taskInput" placeholder="Add a new task...">
-        <input type="date" id="dueDate" placeholder="Due Date">
-        <button id="addTaskButton">Add Task</button>
-    </div>
-    <div id="taskList" class="task-list">
-            <!-- Tasks will appear here -->
-    </div>
+    <div class="container">
+        <h1>Shopping Tasks</h1>
+        <!--Need a form in whcih user can type the task and the javascript function will be called-->
+        <!--Need add task button to add new task--> 
+        <form id="task-form" onsubmit=" return createTask()" >
+            <input type="text" id="taskInput" placeholder="Add a new task..." required>
+            <button type="submit">Add Task</button>
+        </form>
+
+       </div>
+        
 {% endblock %}

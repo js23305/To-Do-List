@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from members.views import storeTaskInDatabase
 
 urlpatterns = [
     path('', include('members.urls')),
     path('admin/', admin.site.urls),
+    path('storeTaskInDatabase/', storeTaskInDatabase),
 ]
