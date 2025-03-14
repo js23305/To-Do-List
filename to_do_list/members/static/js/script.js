@@ -3,9 +3,9 @@
 // and send it to the server(views.py)
 // To be processed and stored
 function createTask(event) {
-    event.preventDeafult();
+    event.preventDefault();
     let taskInput = document.getElementById('taskInput').value.trim();
-    if (taskInput === '') {
+    if (taskInput == '') {
         alert('Please enter a task');
         return false;
     }
